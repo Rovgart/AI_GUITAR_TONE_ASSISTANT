@@ -20,7 +20,7 @@ An AI-powered web application that helps guitarists find and generate their idea
 
 | Layer       | Tech                  |
 |-------------|------------------------|
-| Frontend    | Next.js + TypeScript   |
+| Frontend    | React.js + TypeScript   |
 | Backend     | Django + DRF           |
 | Auth        | JWT (custom)           |
 | AI Inference| Groq API               |
