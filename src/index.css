@@ -1,3 +1,95 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  background-color: #292f36;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: white;
+}
+
+@theme {
+  /* Primary - Cornflower Blue */
+  --color-primary: #758bfd;
+  --color-primary-100: #010d49;
+  --color-primary-200: #021a93;
+  --color-primary-300: #0327dc;
+  --color-primary-400: #2e50fc;
+  --color-primary-500: #758bfd;
+  --color-primary-600: #92a4fd;
+  --color-primary-700: #aebbfe;
+  --color-primary-800: #c9d2fe;
+  --color-primary-900: #e4e8ff;
+
+  /* Secondary - Gunmetal */
+  --color-secondary: #292f36;
+  --color-secondary-100: #080a0b;
+  --color-secondary-200: #111316;
+  --color-secondary-300: #191d21;
+  --color-secondary-400: #21262c;
+  --color-secondary-500: #292f36;
+  --color-secondary-600: #4d5966;
+  --color-secondary-700: #728294;
+  --color-secondary-800: #a1acb8;
+  --color-secondary-900: #d0d5db;
+
+  /* Tertiary - White */
+  --color-tertiary: #fefeff;
+  --color-tertiary-100: #000066;
+  --color-tertiary-200: #0000cc;
+  --color-tertiary-300: #3333ff;
+  --color-tertiary-400: #9999ff;
+  --color-tertiary-500: #fefeff;
+  --color-tertiary-600: #ffffff;
+  --color-tertiary-700: #ffffff;
+  --color-tertiary-800: #ffffff;
+  --color-tertiary-900: #ffffff;
+
+  /* Error - Bittersweet */
+  --color-error: #fe5f55;
+  --color-error-100: #430500;
+  --color-error-200: #860a01;
+  --color-error-300: #c90e01;
+  --color-error-400: #fe1f0f;
+  --color-error-500: #fe5f55;
+  --color-error-600: #fe7e75;
+  --color-error-700: #fe9e97;
+  --color-error-800: #ffbfba;
+  --color-error-900: #ffdfdc;
+
+  /* Success - Pigment Green */
+  --color-success: #3da35d;
+  --color-success-100: #0c2113;
+  --color-success-200: #184225;
+  --color-success-300: #246238;
+  --color-success-400: #30834b;
+  --color-success-500: #3da35d;
+  --color-success-600: #58c179;
+  --color-success-700: #82d19b;
+  --color-success-800: #ace0bc;
+  --color-success-900: #d5f0de;
+
+  /* Warning - You might want to add a warning color (orange/yellow) */
+  --color-warning: #f59e0b;
+  --color-warning-100: #1e1100;
+  --color-warning-200: #3c2200;
+  --color-warning-300: #5a3300;
+  --color-warning-400: #d97706;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #fbbf24;
+  --color-warning-700: #fcd34d;
+  --color-warning-800: #fde68a;
+  --color-warning-900: #fef3c7;
+}

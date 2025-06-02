@@ -65,7 +65,7 @@ export default function Modal({ children, size = "md", overlays }: ModalProps) {
   if (!modalOverlays) return null;
 
   const baseModalClass =
-    "fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-lg bg-white";
+    "fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-lg bg-secondary";
 
   const modalClasses = [
     baseModalClass,
@@ -116,7 +116,7 @@ interface ModalSubComponentProps {
 
 function Backdrop() {
   return (
-    <div className="fixed inset-0 z-40 bg-black bg-opacity-50 transition-opacity" />
+    <div className="fixed inset-0 z-40 bg-black opacity-55 transition-opacity" />
   );
 }
 

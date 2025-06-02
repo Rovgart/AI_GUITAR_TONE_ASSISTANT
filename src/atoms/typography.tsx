@@ -6,7 +6,7 @@ type HeadingLevelT = 1 | 2 | 3 | 4 | 5 | 6;
 interface HeadingPropsT extends React.HTMLAttributes<HTMLHeadingElement> {
   level: HeadingLevelT;
   children?: React.ReactNode;
-  size: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
+  size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
 }
 
 interface ParagraphPropsT extends React.HTMLAttributes<HTMLParagraphElement> {
@@ -14,8 +14,13 @@ interface ParagraphPropsT extends React.HTMLAttributes<HTMLParagraphElement> {
   children?: React.ReactNode;
 }
 
-export const Heading = ({ level, children, size, ...props }: HeadingPropsT) => {
-  const baseHeadingClass = "text-base text-white font-semibold";
+export const Heading = ({
+  level,
+  children,
+  size = "md",
+  ...props
+}: HeadingPropsT) => {
+  const baseHeadingClass = " text-white font-semibold";
   const headingSizes = {
     sm: "text-sm",
     md: "text-md",

@@ -1,14 +1,17 @@
-import "./App.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import Header from "./organisms/Header";
+import MainPage from "./pages/mainpage";
+import { Toaster } from "react-hot-toast";
+import ModalManager from "./organisms/ModalManager";
+
+const queryClient = new QueryClient();
+
 function App() {
-  const queryClient = new QueryClient();
   return (
-    <>
-      <QueryClientProvider client={queryClient}>
-        <Header />
-      </QueryClientProvider>
-    </>
+    <QueryClientProvider client={queryClient}>
+      <ModalManager />
+      <Toaster />
+      <MainPage />
+    </QueryClientProvider>
   );
 }
 

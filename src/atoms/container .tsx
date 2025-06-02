@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   size?: "sm" | "md" | "lg" | "xl" | "full";
   padding?: "none" | "sm" | "md" | "lg";

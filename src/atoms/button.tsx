@@ -18,9 +18,9 @@ export default function Button({
   ...props
 }: ButtonPropsT) {
   const buttonVariants = {
-    primary: "bg-palatinate_blue text-white hover:bg-palatinte_blue/90",
-    secondary: "bg-viridian text-white hover:bg-viridian/90",
-    outline: "border border-eerie_black text-eerie_black",
+    primary: "bg-primary text-white hover:bg-palatinte_blue/90",
+    secondary: "bg-secondary text-white hover:bg-viridian/90",
+    outline: "border border-tertiary text-tertiary",
     ghost: "bg-transparent text-eerie_black hover:bg-eerie_black/10",
     danger: "bg-red-600 text-white hover:bg-red-700",
   };

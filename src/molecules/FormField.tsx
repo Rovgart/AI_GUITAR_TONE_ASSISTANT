@@ -12,10 +12,11 @@ interface FormFieldPropsT {
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
   error?: string;
   helperText?: string;
-  variant: InputVariantsT;
   placeholder?: string;
   name?: string;
+  required?: boolean;
   className?: string;
+  register?: any;
 }
 
 const FormField = forwardRef<HTMLInputElement, FormFieldPropsT>(
@@ -31,6 +32,7 @@ const FormField = forwardRef<HTMLInputElement, FormFieldPropsT>(
       error,
       helperText,
       variant,
+      required = false,
       className,
     },
     ref
@@ -39,23 +41,24 @@ const FormField = forwardRef<HTMLInputElement, FormFieldPropsT>(
       <Box className={className}>
         {label && <Label variant="subtle" text={label} htmlFor={id} />}
         <Input
-          className="w-full"
+          className="w-full "
           ref={ref}
           id={id}
           name={name}
           type={type}
           value={value}
+          required={required}
           onChange={onChange}
           variant={variant}
           placeholder={placeholder}
         />
         {helperText && (
-          <Paragraph className="text-gray-500" size="sm" variant="default">
+          <Paragraph className="text-gray-500" size="sm">
             {helperText}
           </Paragraph>
         )}
         {error && (
-          <Paragraph className="text-red-500" size="sm" variant="default">
+          <Paragraph className="text-red-500" size="sm">
             {error}
           </Paragraph>
         )}

@@ -5,7 +5,7 @@ export type popoverStoreT = {
   closePopover: () => void;
 };
 
-export type ModalTypeT = "sign-up" | "post-modal-wrapper" | null;
+export type ModalTypeT = "sign-up" | "post-modal-wrapper" | "login" | null;
 export interface ModalStoreT {
   open: (modalType: ModalTypeT) => void;
   isOpen: boolean;

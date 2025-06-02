@@ -6,12 +6,14 @@ interface StackPropsI extends React.AllHTMLAttributes<HTMLDivElement> {
   direction?: "row" | "col";
   justify?: "center" | "end" | "start";
   align?: "center" | "end" | "start";
+  gap?: "sm" | "md" | "lg";
 }
 export function Stack({
   children,
   direction = "row",
   justify = "start",
   align = "start",
+  gap = "md",
   ...props
 }: StackPropsI) {
   return (
@@ -31,6 +33,11 @@ export function Stack({
           "items-start": align === "start",
           "items-center": align === "center",
           "items-end": align === "end",
+        },
+        {
+          "gap-4": gap === "sm",
+          "gap-8": gap === "md",
+          "gap-12": gap === "lg",
         }
       )}
       {...props}
