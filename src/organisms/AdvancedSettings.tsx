@@ -2,9 +2,6 @@ import { Box } from "@/atoms/container ";
 import { Stack } from "@/atoms/ui-structures";
 import { X } from "lucide-react";
 import Search from "@/molecules/Search";
-import { ampsList, irsList } from "@/data/index";
-import { useFetchAmps } from "@/hooks/useFetchAmps";
-import { useEffect } from "react";
 import { FETCH_AMPS_URL, FETCH_IRS_URL } from "..";
 
 export default function AdvancedSettings({

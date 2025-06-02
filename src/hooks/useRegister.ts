@@ -33,7 +33,6 @@ export const useRegister = (options: UseRegisterOptions = {}) => {
     mutationFn: userApi.signUp,
 
     onSuccess: (data) => {
-      // Auto login if enabled
       if (autoLogin && data.token) {
         setAuth(data.token, data.user);
         queryClient.setQueryData(["user", "current"], data.user);

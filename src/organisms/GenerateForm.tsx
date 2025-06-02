@@ -1,22 +1,19 @@
 import FormField from "@/molecules/FormField";
-import { FormProvider, useForm, type SubmitHandler } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import DefaultBadgesList from "./DefaultBadgesList";
 import { Stack } from "@/atoms/ui-structures";
 import Button from "@/atoms/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { generateFormSchema } from "@/schemas";
 import { Box } from "@/atoms/container ";
-import { SlidersHorizontal } from "lucide-react";
-import { Heading, Paragraph } from "@/atoms/typography";
-import AdvancedSettings from "./AdvancedSettings";
 
-import { useState, type ChangeEvent } from "react";
+import { Heading, Paragraph } from "@/atoms/typography";
+
 import { useError } from "@/hooks/useError";
 import { useGenerateTone } from "@/hooks/useGenerateQuery";
 import Loader from "@/molecules/Loader";
 import LLMResponse from "./LLMResponse";
 export default function GenerateForm() {
-  const [isAdvancedVisible, setIsAdvancedVisible] = useState(false);
   const { handleError } = useError();
   const generateTone = useGenerateTone();
   const handleGenerate = (data) => {
@@ -30,17 +27,13 @@ export default function GenerateForm() {
     },
   });
 
-  const submitHandler = (data): SubmitHandler<ChangeEvent> => {
+  const submitHandler = (data) => {
     try {
       handleGenerate(data);
     } catch (error) {
       handleError(error);
     }
   };
-  const handleAdvancedVisibility = () => {
-    setIsAdvancedVisible((prev) => !prev);
-  };
-
   return (
     <Box>
       <FormProvider {...methods}>

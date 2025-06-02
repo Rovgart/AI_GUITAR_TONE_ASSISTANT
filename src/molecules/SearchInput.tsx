@@ -19,7 +19,7 @@ export default function SearchInput({
   choice,
   registerFieldName,
 }: SearchInputProps) {
-  const { register, setValue } = useFormContext();
+  const { setValue } = useFormContext();
 
   const valueChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;

@@ -1,13 +1,27 @@
+import type { UserT } from "@/types/api-types";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-export const useUserStore = create(
+interface UserStoreState {
+  isAuthenticated: boolean;
+  authToken: string | null;
+}
+
+interface UserStoreActions {
+  setAuth: (token: string, user: UserT) => void;
+  clearAuth: () => void;
+  getAuthToken: () => string | null;
+}
+
+interface UserStoreI extends UserStoreState, UserStoreActions {}
+
+export const useUserStore = create<UserStoreI>()(
   persist(
     (set, get) => ({
       isAuthenticated: false,
       authToken: null,
 
-      setAuth: (token, user) =>
+      setAuth: (token: string, user: UserT) =>
         set({
           authToken: token,
           isAuthenticated: !!token,
@@ -19,7 +33,6 @@ export const useUserStore = create(
           isAuthenticated: false,
         }),
 
-      // Getters
       getAuthToken: () => get().authToken,
     }),
     {
